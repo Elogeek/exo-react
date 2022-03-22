@@ -28,7 +28,7 @@ export const Product = function ({product,setIsProductUpdated}) {
                 <img src={product.picture} alt={product.name} />
             </div>
             <div className="content">
-                <p className="price">${product.price}</p>
+                <p className="price">{product.price}</p>
                 <h1>{product['name']}</h1>
                 <p className="description">{product.description}</p>
                 <div className="flexRow">

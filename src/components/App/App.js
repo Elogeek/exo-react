@@ -32,7 +32,7 @@ function App() {
       <>
         <Header/>
           <div className="container">
-              <Cart products={products} />
+              <Cart products={products}  setIsProductUpdated={setIsProductUpdated}/>
               <div className="container_product">
                   <Category />
                   <ProductList products={products} setIsProductUpdated={setIsProductUpdated}/>
