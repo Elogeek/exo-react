@@ -3,7 +3,7 @@ import './Product.css';
 export const Product = function ({product,setIsProductUpdated}) {
 
     /**
-     * Gère l'action de retirer un product du panier
+     * Manages the action of removing a product from the basket
      */
     function handleMinusClick(e) {
         if(product.cart > 0) {
@@ -13,12 +13,21 @@ export const Product = function ({product,setIsProductUpdated}) {
     }
 
     /**
-     *  Gère l'action add a product du panier
+     *  Manages the add a product action of the basket
      */
     function handlePlusClick(e) {
         if(product.cart < product.stock) {
             product.cart += 1;
             setIsProductUpdated(true);
+        }
+    }
+
+    /**
+     * Display a alert, when the product is  not unavailable
+     */
+    function handleDoubleClick(e) {
+        if(product.cart === 0 && product.stock === 0){
+            alert("Cet article est indisponible!");
         }
     }
 
@@ -33,9 +42,9 @@ export const Product = function ({product,setIsProductUpdated}) {
                 <p className="description">{product.description}</p>
                 <div className="flexRow">
                     <div className="QuantitySelector">
-                        <button className="quantity-selector-minus" onClick={handleMinusClick}> - </button>
-                        <div className="quantity-selector-amount">{product.cart}</div>
-                        <button className="quantity-selector-plus" onClick={handlePlusClick}> + </button>
+                        <button onClick={handleMinusClick}> - </button>
+                        <div>{product.cart}</div>
+                        <button onClick={handlePlusClick} onDoubleClick={handleDoubleClick}> + </button>
                     </div>
                 </div>
             </div>

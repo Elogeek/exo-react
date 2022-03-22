@@ -40,7 +40,7 @@
     right: 11%;
 }
 
-.quantity-selector {
+.QuantitySelector {
     display: flex;
     justify-content: space-between;
     width: 100px;
@@ -50,7 +50,7 @@
     margin-top: 1rem;
 }
 
-.quantity-selector-minus, .quantity-selector-plus, .quantity-selector-amount {
+.QuantitySelector button:first-child, .QuantitySelector button:last-child, .QuantitySelector div {
     width: 25px;
     height: 25px;
     display: flex;
@@ -60,12 +60,12 @@
     border: none;
 }
 
-.quantity-selector-minus {
+.QuantitySelector button:first-child {
     color: #545454;
     background-color: #e3e3e3;
 }
 
-.quantity-selector-plus {
+.QuantitySelector button:last-child {
     color: #F9F9FA;
     background-color: rgba(0, 0, 255, 0.91);
 }
