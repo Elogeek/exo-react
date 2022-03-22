@@ -27,7 +27,7 @@ export const Product = function ({product,setIsProductUpdated}) {
      */
     function handleDoubleClick(e) {
         if(product.cart === 0 && product.stock === 0){
-            alert("Cet article est indisponible !");
+            alert("Cet article est indisponible pour le moment !");
         }
     }
 
