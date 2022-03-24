@@ -13,15 +13,16 @@ import {useState} from "react";
 function App() {
 
     const productsList = [
-        {id:1, cart:0, name:'Product 1', picture: image1, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 20},
-        {id:2, cart:0, name:'Product 2', picture: image2, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 10},
-        {id:3, cart:0, name:'Product 3', picture: image3, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 50},
-        {id:4, cart:0, name:'Product 4', picture: image4, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 0},
-        {id:5, cart:0, name:'Product 5', picture: image5, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 0},
+        {id:1, category:2, cart:0, name:'Product 1', picture: image1, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 20},
+        {id:2, category:3, cart:0, name:'Product 2', picture: image2, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 10},
+        {id:3, category:2, cart:0, name:'Product 3', picture: image3, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 50},
+        {id:4, category:1, cart:0, name:'Product 4', picture: image4, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 0},
+        {id:5, category:4, cart:0, name:'Product 5', picture: image5, description: 'Lorem ipsum dolor sit amet, consecteur adipiscing elit.', price: "$230", stock: 0},
     ]
 
     const [products, setProducts] = useState([...productsList]);
     const [isProductUpdated, setIsProductUpdated] = useState(false);
+    const [category, setCategory] = useState(0);
 
     if(isProductUpdated) {
         setProducts(products);
@@ -34,8 +35,8 @@ function App() {
           <div className="container">
               <Cart products={products}  setIsProductUpdated={setIsProductUpdated}/>
               <div className="container_product">
-                  <Category />
-                  <ProductList products={products} setIsProductUpdated={setIsProductUpdated}/>
+                  <Category setCategory ={setCategory} />
+                  <ProductList category={category} products={products} setIsProductUpdated={setIsProductUpdated}/>
               </div>
           </div>
       </>
